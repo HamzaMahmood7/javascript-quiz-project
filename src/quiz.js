@@ -2,6 +2,11 @@ class Quiz {
     // YOUR CODE HERE:
     //
     // 1. constructor (questions, timeLimit, timeRemaining)
+    constructor(questions, timeLimit, timeRemaining) {
+        this.questions = questions;
+        this.timeLimit = timeLimit;
+        
+    }
 
     // 2. getQuestion()
     
