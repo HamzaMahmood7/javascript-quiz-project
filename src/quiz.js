@@ -51,30 +51,26 @@ class Quiz {
     }
   }
 
-  /*
-filterQuestionsByDifficulty(difficulty) {
-   1. Check if difficulty is between 1 and 3
-   2. If yes: filter this.questions to keep only those where question.difficulty === difficulty
-  3. Update this.questions with the filtered result
-}
-*/
-
   // Day 2
   // 1. filterQuestionsByDifficulty(difficulty)
   filterQuestionsByDifficulty(difficulty) {
     if (difficulty >= 1 && difficulty <= 3) {
-      let filteredQuestionByDifficulty = this.questions.filter((currentQuestion) => currentQuestion.difficulty === difficulty);
+      let filteredQuestionByDifficulty = this.questions.filter(
+        (currentQuestion) => currentQuestion.difficulty === difficulty
+      );
       this.questions = filteredQuestionByDifficulty;
-      return this.questions
+      return this.questions;
     } else {
-        return false
+      return false;
     }
   }
 
   // 2. averageDifficulty()
   averageDifficulty() {
-    return this.questions.reduce((acc, currentQuestion) => {
-        return acc + currentQuestion.difficulty
-    },0) / this.questions.length
+    return (
+      this.questions.reduce((acc, currentQuestion) => {
+        return acc + currentQuestion.difficulty;
+      }, 0) / this.questions.length
+    );
   }
 }
