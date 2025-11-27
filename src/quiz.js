@@ -34,12 +34,20 @@ class Quiz {
 
   // 5. checkAnswer(answer)
   checkAnswer(answer) {
-    for (let i = 0; i < this.questions.length; i++) {
-      const currentQuestion = this.questions[i];
-      if (answer === currentQuestion.answer) {
-        return this.correctAnswers++;
-      }
+    // for (let i = 0; i < this.questions.length; i++) {
+    //   const currentQuestion = this.questions[i];
+    //   if (answer === currentQuestion.answer) {
+    //     return this.correctAnswers++;
+    //   }
+    // }
+
+    const correct = answer === this.questions[this.currentQuestionIndex].answer;
+
+    if (correct) {
+      this.correctAnswers++;
     }
+
+    return correct;
   }
 
   // 6. hasEnded()
